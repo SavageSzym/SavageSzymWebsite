@@ -12,7 +12,6 @@
     --accent-dark: #7d3fae;
     --card-bg: #ffffff;
     --divider: #ece5f2;
-    --avatar-ring: #f1e9f7;
     --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
     --font-body: 'Segoe UI', system-ui, -apple-system, sans-serif;
   }
@@ -45,19 +44,7 @@
 
   /* ---- Top row: avatar + name/about ---- */
   .top-row{
-    display: flex;
-    align-items: center;
-    gap: 32px;
     margin-bottom: 20px;
-  }
-  .avatar{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--avatar-ring);
-    background: var(--avatar-ring);
-    flex-shrink: 0;
   }
   .top-info h1{
     font-family: var(--font-display);
@@ -135,11 +122,10 @@
   @media (max-width: 620px){
     body{ padding: 32px 14px; }
     .island{ padding: 32px 22px 26px; border-radius: 22px; }
-    .top-row{ flex-direction: column; text-align: center; gap: 20px; margin-bottom: 8px; }
-    .avatar{ width: 120px; height: 120px; }
+    .top-row{ margin-bottom: 8px; }
     .top-info h1{ font-size: 1.7rem; }
     .top-info .about-text{ font-size: 0.92rem; }
-    .contact-line{ justify-content: center; flex-wrap: wrap; font-size: 0.88rem; }
+    .contact-line{ flex-wrap: wrap; font-size: 0.88rem; }
     .contact-line .sub{ display: block; margin-left: 0; }
     hr.divider{ margin: 20px 0; }
     .centered-section h2{ font-size: 1.2rem; }
@@ -150,7 +136,6 @@
 
   @media (max-width: 380px){
     .top-info h1{ font-size: 1.5rem; }
-    .avatar{ width: 100px; height: 100px; }
   }
 </style>
 </head>
@@ -160,9 +145,6 @@
 
   <!-- ============ TOP: AVATAR + NAME/ABOUT ============ -->
   <div class="top-row">
-    <!-- Replace the src below with a link to your own image, or a local file name -->
-    <img class="avatar" src="https://github.com/SavageSzym/SavageSzymWebsite/blob/main/profilepic.jpg" alt="Profile picture">
-
     <div class="top-info">
       <h1>SavageSzym</h1>
       <p class="about-text">Hello! I am SavageSzym and I do some stuff on the internet every so often.</p>
@@ -185,7 +167,7 @@
   <section class="centered-section">
     <h2>Current notable work</h2>
 
-    <!-- Edit the "when" text by hand — it is NOT calculated and the dates MUST be written in manually. -->
+    <!-- Edit the "when" text by hand — it is NOT calculated. -->
     <div class="work-item">
       <span class="icon">🛠️</span>
       <span>Moderator for <a href="https://www.reddit.com/r/SpicyPillows/" target="_blank" rel="noopener">r/SpicyPillows</a> 180K+</span>
