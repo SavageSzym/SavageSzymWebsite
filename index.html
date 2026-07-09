@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SavageSzym's Profile</title>
+<style>
+  :root{
+    --text-main: #2b2430;
+    --text-muted: #8b8393;
+    --accent: #9b59d0;
+    --accent-dark: #7d3fae;
+    --card-bg: #ffffff;
+    --divider: #ece5f2;
+    --avatar-ring: #f1e9f7;
+    --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-body: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-body);
+    color: var(--text-main);
+    line-height: 1.5;
+    background: linear-gradient(135deg, #f6e6f7 0%, #efe4f9 35%, #fbe6ee 70%, #fdeef2 100%);
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+  }
+
+  /* ---- Floating island card ---- */
+  .island{
+    background: var(--card-bg);
+    border-radius: 28px;
+    max-width: 780px;
+    width: 100%;
+    padding: 48px 56px 40px;
+    box-shadow: 0 30px 70px -20px rgba(123, 63, 174, 0.25), 0 8px 24px -8px rgba(123, 63, 174, 0.15);
+  }
+
+  /* ---- Top row: avatar + name/about ---- */
+  .top-row{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 20px;
+  }
+  .avatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--avatar-ring);
+    background: var(--avatar-ring);
+    flex-shrink: 0;
+  }
+  .top-info h1{
+    font-family: var(--font-display);
+    font-size: 2.1rem;
+    font-weight: 800;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+  }
+  .top-info .about-text{
+    font-size: 0.98rem;
+    color: var(--text-main);
+    margin: 0 0 12px;
+  }
+
+  .contact-line{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+  .contact-line .icon{ font-size: 1rem; width: 20px; text-align: center; }
+  .contact-line a{ color: var(--accent-dark); text-decoration: none; font-weight: 600; }
+  .contact-line a:hover{ text-decoration: underline; }
+  .contact-line .sub{ color: var(--text-muted); font-style: italic; font-size: 0.85rem; margin-left: 2px;}
+
+  hr.divider{
+    border: none;
+    border-top: 1px solid var(--divider);
+    margin: 26px 0;
+  }
+
+  /* ---- Centered sections below ---- */
+  .centered-section{
+    text-align: center;
+  }
+  .centered-section h2{
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 16px;
+    color: var(--text-main);
+  }
+
+  .work-item{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 0.98rem;
+  }
+  .work-item .icon{ width: 20px; text-align: center; flex-shrink: 0; }
+  .work-item a{ color: var(--accent-dark); text-decoration: none; font-weight: 600; }
+  .work-item a:hover{ text-decoration: underline; }
+  .work-item .when{ color: var(--text-muted); font-style: italic; }
+
+  .socials-item{
+    margin-bottom: 8px;
+    font-size: 0.98rem;
+  }
+  .socials-item .icon{ width: 20px; display: inline-block; text-align: center; }
+  .socials-item a{ color: var(--accent-dark); text-decoration: none; }
+  .socials-item a:hover{ text-decoration: underline; }
+
+  .footer-note{
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 620px){
+    body{ padding: 32px 14px; }
+    .island{ padding: 32px 22px 26px; border-radius: 22px; }
+    .top-row{ flex-direction: column; text-align: center; gap: 20px; margin-bottom: 8px; }
+    .avatar{ width: 120px; height: 120px; }
+    .top-info h1{ font-size: 1.7rem; }
+    .top-info .about-text{ font-size: 0.92rem; }
+    .contact-line{ justify-content: center; flex-wrap: wrap; font-size: 0.88rem; }
+    .contact-line .sub{ display: block; margin-left: 0; }
+    hr.divider{ margin: 20px 0; }
+    .centered-section h2{ font-size: 1.2rem; }
+    .work-item{ flex-direction: column; gap: 2px; margin-bottom: 16px; }
+    .work-item .icon{ display: none; }
+    .socials-item{ font-size: 0.92rem; }
+  }
+
+  @media (max-width: 380px){
+    .top-info h1{ font-size: 1.5rem; }
+    .avatar{ width: 100px; height: 100px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="island">
+
+  <!-- ============ TOP: AVATAR + NAME/ABOUT ============ -->
+  <div class="top-row">
+    <!-- Replace the src below with a link to your own image, or a local file name -->
+    <img class="avatar" src="https://placehold.co/220x220/f1e9f7/9b59d0?text=Avatar" alt="Profile picture">
+
+    <div class="top-info">
+      <h1>SavageSzym</h1>
+      <p class="about-text">Hello! I am SavageSzym and I do some stuff on the internet every so often.</p>
+
+      <div class="contact-line">
+        <span class="icon">✉️</span>
+        <a href="mailto:hello@savageszym.co.uk">hello@savageszym.co.uk</a>
+      </div>
+      <div class="contact-line">
+        <span class="icon">💬</span>
+        <strong>Discord:</strong> <strong>@savageszym</strong>
+        <span class="sub">(649295199461179402)</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ============ CURRENT NOTABLE WORK ============ -->
+  <section class="centered-section">
+    <h2>Current notable work</h2>
+
+    <!-- Edit the "when" text by hand — it is NOT calculated and the dates MUST be written in manually. -->
+    <div class="work-item">
+      <span class="icon">🛠️</span>
+      <span>Moderator for <a href="https://www.reddit.com/r/SpicyPillows/" target="_blank" rel="noopener">r/SpicyPillows</a> 180K+</span>
+      <span class="when">(Joined June 15, 2026)</span>
+    </div>
+
+    <div class="work-item">
+      <span class="icon">🛠️</span>
+      <span>Moderator for <a href="https://www.reddit.com/r/snow/" target="_blank" rel="noopener">r/snow</a> 105K+</span>
+      <span class="when">(Joined February 4, 2026)</span>
+    </div>
+
+    <div class="work-item">
+      <span class="icon">🛠️</span>
+      <span>Moderator for <a href="https://www.reddit.com/r/applebusinessmanager/" target="_blank" rel="noopener">r/applebusinessmanager</a></span>
+      <span class="when">(Joined April 22, 2026)</span>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ============ SOCIALS ============ -->
+  <section class="centered-section">
+    <h2>Socials</h2>
+
+    <div class="socials-item">
+      <strong>X:</strong> <a href="https://x.com/SavageSzym" target="_blank" rel="noopener">@SavageSzym</a>
+    </div>
+    <div class="socials-item">
+      <strong>Reddit:</strong> <a href="https://www.reddit.com/user/TotallySavageSzym/" target="_blank" rel="noopener">u/TotallySavageSzym</a>
+    </div>
+    <div class="socials-item">
+      <strong>GitHub:</strong> <a href="https://github.com/SavageSzym" target="_blank" rel="noopener">@SavageSzym</a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <p class="footer-note">© 2026 SavageSzym. All rights reserved.</p>
+
+</div>
+
+</body>
+</html>
